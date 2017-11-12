@@ -1,0 +1,50 @@
+.module-container
+{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 25px;
+  grid-template-areas:
+    "task-module . . .";
+}
+
+.card
+{
+  background-color: #FFF;
+  border-radius: 2px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.task-module
+{
+  display: grid;
+  grid-template-rows: .5fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "module-title"
+    "gen-task-btn"
+    "pri-task-btn"
+    "add-task-btn";
+
+  grid-area: task-module;
+  height: 300px;
+}
+
+.module-title
+{
+  grid-area: module-title;
+  margin-top: 15px;
+}
+
+.gen-task-btn
+{
+  grid-area: gen-task-btn;
+}
+
+.pri-task-btn
+{
+  grid-area: pri-task-btn;
+}
+
+.add-task-btn
+{
+  grid-area: add-task-btn;
+}
