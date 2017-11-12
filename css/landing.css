@@ -17,12 +17,10 @@
 .task-module
 {
   display: grid;
-  grid-template-rows: .5fr 1fr 1fr 1fr;
+  grid-template-rows: .2fr 1fr;
   grid-template-areas:
     "module-title"
-    "gen-task-btn"
-    "pri-task-btn"
-    "add-task-btn";
+    "module-task-btn";
 
   grid-area: task-module;
   height: 300px;
@@ -31,7 +29,18 @@
 .module-title
 {
   grid-area: module-title;
-  margin-top: 15px;
+}
+
+.module-task-btn
+{
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    "gen-task-btn"
+    "pri-task-btn"
+    "add-task-btn";
+
+  grid-area: module-task-btn;
 }
 
 .gen-task-btn
