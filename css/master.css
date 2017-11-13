@@ -17,7 +17,8 @@ body
   grid-template-areas:
     ". navbar-content .";
 
-  background-color: #0069C0;
+  background-color: #0277BD;
+  /* https://material.io/color/#!/?view.left=0&view.right=0&primary.color=0277BD */
   height: 50px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   margin-bottom: 25px;
