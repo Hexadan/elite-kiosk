@@ -76,11 +76,51 @@
 .task-buttons-container
 {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr .2fr;
+  grid-template-columns: 2fr 1fr .2fr;
   grid-template-areas:
-    "gen-btn pri-btn . add-btn";
+    "task-list-buttons . task-option-buttons";
 
-  padding: 14px 12px;
+  padding: 0 12px;
+}
+
+.task-list-buttons
+{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "gen-btn pri-btn";
+
+  grid-area: task-list-buttons;
+  padding-top: 12px;
+}
+
+.task-option-buttons
+{
+  grid-area: task-option-buttons;
+  padding-top: 8px;
+}
+
+.btn
+{
+  background-color: Transparent;
+  border: 0;
+}
+
+.btn-task-list
+{
+  font-size: 20px;
+  padding: 0;
+}
+
+.btn-add
+{
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80% 80%;
+  width: 28px;
+  height: 28px;
+  background-image: url('../img/add.png');
+  margin-right: 1px;
 }
 
 .gen-btn
