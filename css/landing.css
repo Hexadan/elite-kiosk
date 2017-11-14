@@ -87,6 +87,7 @@
 {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-gap: 5px;
   grid-template-areas:
     "gen-btn pri-btn";
 
@@ -97,7 +98,7 @@
 .task-option-buttons
 {
   grid-area: task-option-buttons;
-  padding-top: 8px;
+  padding-top: 10px;
 }
 
 .btn
@@ -108,7 +109,7 @@
 
 .btn-task-list
 {
-  font-size: 20px;
+  font-size: 18px;
   padding: 0;
 }
 
@@ -116,11 +117,10 @@
 {
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 80% 80%;
-  width: 28px;
-  height: 28px;
+  background-size: 60% 60%;
+  width: 24px;
+  height: 24px;
   background-image: url('../img/add.png');
-  margin-right: 1px;
 }
 
 .gen-btn

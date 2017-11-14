@@ -15,7 +15,7 @@
     <div class="navbar-container">
       <div class="navbar-content">
         <div class="navbar-logo">
-          <a href="#">Elite Networks Kiosk</a>
+          <a href="index.html">Elite Networks Kiosk</a>
         </div>
         <div class="navbar-links">
           <div class="link-1">
@@ -44,6 +44,7 @@
               </div>
             </div>
             <div class="module-task-recent">
+              <!-- php -->
               <div class="row">
                 Task 1
               </div>
@@ -62,14 +63,15 @@
             </div>
             <div class="module-task-buttons">
               <div class="task-buttons-container">
-                <form class="task-list-buttons">
+                <form class="task-list-buttons" action="task-list.php" method="POST">
                   <div class="gen-btn">
-                    <button type="submit" class="btn btn-task-list">General</button>
+                    <button type="submit" name="general" value="0" class="btn btn-task-list">General</button>
                   </div>
                   <div class="pri-btn">
-                    <button type="submit" class="btn btn-task-list">Priority</button>
+                    <button type="submit" name="priority" value="1" class="btn btn-task-list">Priority</button>
                   </div>
                 </form>
+                <!-- update form -->
                 <form class="task-option-buttons">
                   <div class="add-btn">
                     <button class="btn btn-add"></button>
