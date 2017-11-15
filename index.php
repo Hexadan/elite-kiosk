@@ -15,7 +15,7 @@
     <div class="navbar-container">
       <div class="navbar-content">
         <div class="navbar-logo">
-          <a href="index.html">Elite Networks Kiosk</a>
+          <a href="index.php">Elite Networks Kiosk</a>
         </div>
         <div class="navbar-links">
           <div class="link-1">
@@ -44,22 +44,21 @@
               </div>
             </div>
             <div class="module-task-recent">
-              <!-- php -->
-              <div class="row">
-                Task 1
-              </div>
-              <div class="row">
-                Task 2
-              </div>
-              <div class="row">
-                Task 3
-              </div>
-              <div class="row">
-                Task 4
-              </div>
-              <div class="row">
-                Task 5
-              </div>
+              <?php
+                include('/var/www/html/new/php/database-connection.php');
+
+                $query = "SELECT * FROM task_list ORDER BY task_ID DESC LIMIT 5";
+
+                $result = $db_conn->query($query);
+
+                if($result->num_rows)
+                {
+                  while($info = $result->fetch_assoc())
+                  {
+                    echo "<div class='row'>". $info['task_Name'] ."</div>";
+                  }
+                }
+              ?>
             </div>
             <div class="module-task-buttons">
               <div class="task-buttons-container">

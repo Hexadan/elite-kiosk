@@ -44,7 +44,7 @@ if((isset($_POST['status-selection'])) && (isset($_POST['submit'])))
     <div class="navbar-container">
       <div class="navbar-content">
         <div class="navbar-logo">
-          <a href="index.html">Elite Networks Kiosk</a>
+          <a href="index.php">Elite Networks Kiosk</a>
         </div>
         <div class="navbar-links">
           <div class="link-1">
@@ -286,7 +286,7 @@ if((isset($_POST['status-selection'])) && (isset($_POST['submit'])))
 
           </div>
           <div class="task-footer">
-            
+
           </div>
         </div>
       </div>
