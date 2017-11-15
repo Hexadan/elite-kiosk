@@ -1,3 +1,32 @@
+<?php
+
+if(((isset($_POST['general'])) && ($_POST['general'] == 0)) || ((isset($_POST['rank-selection'])) && ($_POST['rank-selection'] == 0)))
+{
+  $rank = 0;
+}
+elseif(((isset($_POST['priority'])) && ($_POST['priority'] == 1)) || ((isset($_POST['rank-selection'])) && ($_POST['rank-selection'] == 1)))
+{
+  $rank = 1;
+}
+
+if((isset($_POST['status-selection'])) && (isset($_POST['submit'])))
+{
+  if(($_POST['status-selection'] == 0))
+  {
+    $status = 0;
+  }
+  elseif(($_POST['status-selection'] == 1))
+  {
+    $status = 1;
+  }
+  elseif(($_POST['status-selection'] == 2))
+  {
+    $status = 2;
+  }
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -37,19 +66,13 @@
           <div class="task-header">
             <div class="task-header-type">
               <?php
-                if(isset($_POST['general']))
+                if($rank == 0)
                 {
-                  if($_POST['general'] == 0)
-                  {
-                    echo "<p>General</p>";
-                  }
+                  echo "<p>General</p>";
                 }
-                elseif(isset($_POST['priority']))
+                elseif($rank == 1)
                 {
-                  if($_POST['priority'] == 1)
-                  {
-                    echo "<p>Priority</p>";
-                  }
+                  echo "<p>Priority</p>";
                 }
                 else
                 {
@@ -62,15 +85,14 @@
             </div>
             <div class="task-header-sort">
               <form action="task-list.php" method="POST" class="task-sort-container">
-                <select class="task-sort-items">
+                <select name="rank-selection" class="task-sort-items">
                   <?php
-                  /*
-                    if((isset($_POST['gen-tasks'])) || ((isset($_POST['submit'])) && ($_POST['priority-selection'] == 0)))
+                    if($rank == 0)
                     {
                       echo "<option value='0' selected>General</option>";
                       echo "<option value='1'>Priority</option>";
                     }
-                    elseif((isset($_POST['pri-tasks'])) || ((isset($_POST['submit'])) && ($_POST['priority-selection'] == 1)))
+                    elseif($rank == 1)
                     {
                       echo "<option value='0'>General</option>";
                       echo "<option value='1' selected>Priority</option>";
@@ -81,27 +103,23 @@
                       echo "<option value='0'>General</option>";
                       echo "<option value='1'>Priority</option>";
                     }
-                    */
                   ?>
                 </select>
-                <select class="task-sort-items">
+                <select name="status-selection" class="task-sort-items">
                   <?php
-                    /*
-                    if(isset($_POST['submit']))
-                    {
-                      if($_POST['status-selection'] == 0)
+                      if($status == 0)
                       {
                         echo "<option value='0' selected>Incomplete</option>";
                         echo "<option value='1'>Complete</option>";
                         echo "<option value='2'>All</option>";
                       }
-                      elseif($_POST['status-selection'] == 1)
+                      elseif($status == 1)
                       {
                         echo "<option value='0'>Incomplete</option>";
                         echo "<option value='1' selected>Complete</option>";
                         echo "<option value='2'>All</option>";
                       }
-                      elseif($_POST['status-selection'] == 2)
+                      elseif($status == 2)
                       {
                         echo "<option value='0'>Incomplete</option>";
                         echo "<option value='1'>Complete</option>";
@@ -113,14 +131,6 @@
                         echo "<option value='1'>Complete</option>";
                         echo "<option value='2'>All</option>";
                       }
-                    }
-                    else
-                    {
-                      echo "<option value='0'>Incomplete</option>";
-                      echo "<option value='1'>Complete</option>";
-                      echo "<option value='2'>All</option>";
-                    }
-                    */
                   ?>
                 </select>
                 <button type="submit" name="submit" value="submit" class="task-sort-items">Sort</button>
@@ -130,7 +140,6 @@
           <div class="column-header">
 
             <?php
-            /*
               if($selected == 1)
               {
                 echo "<div class='column-priority'>";
@@ -148,42 +157,40 @@
                 echo "<div class='col-task-options'>Options</div>";
                 echo "</div>";
               }
-              */
             ?>
 
           </div>
           <div class="row-content">
 
             <?php
-            /*
             if(isset($_POST['submit']))
             {
-              if(((isset($_POST['gen-tasks'])) || ($_POST['priority-selection']==0)) && ($_POST['status-selection'] == 0))
+              if(($rank == 0) && ($status == 0))
               {
                 $query = "SELECT * FROM task_list WHERE task_List = 'G' AND task_Status = '0'";
                 $display = 0;
               }
-              elseif(((isset($_POST['gen-tasks'])) || ($_POST['priority-selection']==0)) && ($_POST['status-selection'] == 1))
+              elseif(($rank == 0) && ($status == 1))
               {
                 $query = "SELECT * FROM task_list WHERE task_List = 'G' and task_Status = '1'";
                 $display = 0;
               }
-              elseif(((isset($_POST['gen-tasks'])) || ($_POST['priority-selection']==0)) && ($_POST['status-selection'] == 2))
+              elseif(($rank == 0) && ($status == 2))
               {
                 $query = "SELECT * FROM task_list WHERE task_List = 'G'";
                 $display = 0;
               }
-              elseif(((isset($_POST['pri-tasks'])) || ($_POST['priority-selection']==1)) && ($_POST['status-selection'] == 0))
+              elseif(($rank == 1) && ($status == 0))
               {
                 $query = "SELECT * FROM task_list WHERE task_List = 'P' AND task_Status = '0' ORDER BY task_Priority DESC";
                 $display = 1;
               }
-              elseif(((isset($_POST['pri-tasks'])) || ($_POST['priority-selection']==1)) && ($_POST['status-selection'] == 1))
+              elseif(($rank == 1) && ($status == 1))
               {
                 $query = "SELECT * FROM task_list WHERE task_List = 'P' AND task_Status = '1' ORDER BY task_Priority DESC";
                 $display = 1;
               }
-              elseif(((isset($_POST['pri-tasks'])) || ($_POST['priority-selection']==1)) && ($_POST['status-selection'] == 2))
+              elseif(($rank == 1) && ($status == 2))
               {
                 $query = "SELECT * FROM task_list WHERE task_List = 'P' ORDER BY task_Priority DESC";
                 $display = 1;
@@ -196,12 +203,12 @@
             }
             else
             {
-              if(isset($_POST['gen-tasks']))
+              if($rank == 0)
               {
                 $query = "SELECT * FROM task_list WHERE task_List = 'G' AND task_Status = '0'";
                 $display = 0;
               }
-              elseif(isset($_POST['pri-tasks']))
+              elseif($rank == 1)
               {
                 $query = "SELECT * FROM task_list WHERE task_List = 'P' AND task_Status = '0' ORDER BY task_Priority DESC";
                 $display = 1;
@@ -213,7 +220,7 @@
               }
             }
 
-            include('/var/www/html/php/database-connection.php');
+            include('/var/www/html/new/php/database-connection.php');
 
             $result = $db_conn->query($query);
 
@@ -275,11 +282,11 @@
             {
                 echo " Error ";
             }
-            */
           ?>
 
           </div>
           <div class="task-footer">
+            
           </div>
         </div>
       </div>

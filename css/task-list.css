@@ -88,7 +88,7 @@
 .column-general
 {
   display: grid;
-  grid-template-columns: 1fr 4.5fr .8fr;
+  grid-template-columns: 1.5fr 4fr .8fr;
   grid-template-areas:
     "col-task-name col-task-sdesc col-task-options";
 }
@@ -96,7 +96,7 @@
 .column-priority
 {
   display: grid;
-  grid-template-columns: 1fr 4fr .5fr .8fr;
+  grid-template-columns: 1.5fr 3.5fr .5fr .8fr;
   grid-template-areas:
     "col-task-name col-task-sdesc col-task-rank col-task-options";
 }
@@ -148,7 +148,7 @@
 .general-row
 {
   display: grid;
-  grid-template-columns: 1fr 4.5fr .8fr;
+  grid-template-columns: 1.5fr 4fr .8fr;
   grid-template-areas:
     "row-task-name row-task-sdesc row-task-options";
 }
@@ -156,7 +156,7 @@
 .priority-row
 {
   display: grid;
-  grid-template-columns: 1fr 4fr .5fr .8fr;
+  grid-template-columns: 1.5fr 3.5fr .5fr .8fr;
   grid-template-areas:
     "row-task-name row-task-sdesc row-task-rank row-task-options";
 }
@@ -164,26 +164,26 @@
 .row-task-name
 {
   grid-area: row-task-name;
-  margin-top: 12px;
+  margin-top: 16px;
 }
 
 .row-task-sdesc
 {
   grid-area: row-task-sdesc;
-  margin-top: 12px;
+  margin-top: 16px;
 }
 
 .row-task-rank
 {
   grid-area: row-task-rank;
-  margin-top: 12px;
+  margin-top: 16px;
   text-align: center;
 }
 
 .row-task-options
 {
   grid-area: row-task-options;
-  margin-top: 10px;
+  margin-top: 12px;
   text-align: center;
 }
 
@@ -200,19 +200,19 @@
 
 .btn-info
 {
-  background-image: url('img/info.png');
+  background-image: url('../img/info.png');
   margin-right: 1px;
 }
 
 .btn-edit
 {
-  background-image: url('img/edit.png');
+  background-image: url('../img/edit.png');
   margin-right: 1px;
 }
 
 .btn-delete
 {
-  background-image: url('img/delete.png');
+  background-image: url('../img/delete.png');
 }
 
 /* footer */
