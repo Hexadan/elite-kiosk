@@ -19,7 +19,7 @@
         </div>
         <div class="navbar-links">
           <div class="link-1">
-            <a href="#">Task List</a>
+            <a href="task-list.php">Task List</a>
           </div>
           <div class="link-2">
             <a href="#">Link 2</a>
@@ -55,7 +55,7 @@
                 {
                   while($info = $result->fetch_assoc())
                   {
-                    echo "<div class='row'>". $info['task_Name'] ."</div>";
+                    echo "<form name='taskOptions' action='task-options.php' method='POST'><button name='task-info' type='submit' class='btn-info' id='". $info['task_ID'] ."'>". $info['task_Name'] ."</button></form>";
                   }
                 }
               ?>

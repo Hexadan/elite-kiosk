@@ -206,6 +206,7 @@
   font-family: Roboto;
   text-align: left;
   padding: 0;
+  outline: none;
 }
 
 .btn-edit

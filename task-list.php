@@ -48,7 +48,7 @@ if((isset($_POST['status-selection'])) && (isset($_POST['submit'])))
         </div>
         <div class="navbar-links">
           <div class="link-1">
-            <a href="#">Task List</a>
+            <a href="task-list.php">Task List</a>
           </div>
           <div class="link-2">
             <a href="#">Link 2</a>

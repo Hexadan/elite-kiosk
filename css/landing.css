@@ -63,9 +63,13 @@
 
 .row
 {
-  padding: 11px 12px;
   border-bottom: 1px #E0E0E0 solid;
   font-size: 14px;
+}
+
+.row:hover
+{
+  background-color: #EEE;
 }
 
 .module-task-buttons
@@ -136,4 +140,15 @@
 .add-btn
 {
   grid-area: add-btn;
+}
+
+.btn-info
+{
+  width: 100%;
+  height: 40px;
+  outline: none;
+  background-color: Transparent;
+  font-family: Roboto;
+  text-align: left;
+  border: 0;
 }
