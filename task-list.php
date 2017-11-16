@@ -258,9 +258,9 @@ if((isset($_POST['status-selection'])) && (isset($_POST['submit'])))
                 {
                   echo "<div class='row'>";
                   echo "<div class='priority-row'>";
-                  echo "<div class='row-task-name'>". $info['task_Name'] ."</div>";
-                  echo "<div class='row-task-sdesc'>". $info['task_ShortDesc'] ."</div>";
-                  echo "<div class='row-task-rank'>". $info['task_Priority'] ."</div>";
+                  echo "<div class='row-task-name'><form name='taskOptions' action='task-options.php' method='POST'><button name='task-info' type='submit' class='btn-info' id='". $info['task_ID'] ."'>". $info['task_Name'] ."</button></form></div>";
+                  echo "<div class='row-task-sdesc'><form name='taskOptions' action='task-options.php' method='POST'><button name='task-info' type='submit' class='btn-info' id='". $info['task_ID'] ."'>". $info['task_ShortDesc'] ."</button></form></div>";
+                  echo "<div class='row-task-rank'><form name='taskOptions' action='task-options.php' method='POST'><button name='task-info' type='submit' class='btn-info' id='". $info['task_ID'] ."'>". $info['task_Priority'] ."</button></form></div>";
                   echo "<div class='row-task-options'>";
                   echo "<form name='taskOptions' action='task-options.php' method='POST'>";
                   echo "<button name='task-edit' type='submit' id='". $info['task_ID'] ."' class='btn btn-edit'></button>";
