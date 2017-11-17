@@ -199,25 +199,31 @@
 
 .btn-info
 {
-  background-color: Transparent;
-  border: 0;
   width: 100%;
   height: 48px;
+
+  background-color: Transparent;
+  outline: none;
+  border: 0;
+  padding: 0;
+
   font-family: Roboto;
   text-align: left;
-  padding: 0;
-  outline: none;
+
+  cursor: pointer;
 }
 
 .btn-edit
 {
   background-image: url('../img/edit.png');
   margin-right: 1px;
+  cursor: pointer;
 }
 
 .btn-delete
 {
   background-image: url('../img/delete.png');
+  cursor: pointer;
 }
 
 /* footer */
