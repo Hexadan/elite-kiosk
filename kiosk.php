@@ -61,7 +61,7 @@
           <div class="row-content">
             <?php
 
-            $query = "SELECT * FROM task_list WHERE task_List = 'G' AND task_Status = '0' ORDER BY task_ID DESC LIMIT 3";
+            $query = "SELECT * FROM task_list WHERE task_List = 'G' AND task_Status = '0' ORDER BY task_ID DESC LIMIT 5";
 
             include('/var/www/html/new/php/database-connection.php');
 
@@ -111,7 +111,7 @@
           <div class="row-content">
             <?php
 
-            $query = "SELECT * FROM task_list WHERE task_List = 'P' AND task_Status = '0' ORDER BY task_Priority DESC LIMIT 3";
+            $query = "SELECT * FROM task_list WHERE task_List = 'P' AND task_Status = '0' ORDER BY task_Priority DESC LIMIT 5";
 
             include('/var/www/html/new/php/database-connection.php');
 
