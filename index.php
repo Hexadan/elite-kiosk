@@ -55,7 +55,7 @@
                 {
                   while($info = $result->fetch_assoc())
                   {
-                    echo "<div class='row'><form name='taskOptions' action='task-options.php' method='POST'><button name='task-info' type='submit' class='btn-info' id='". $info['task_ID'] ."'>". $info['task_Name'] ."</button></form></div>";
+                    echo "<div class='row'><form name='taskOptions' action='task-options.php' method='POST'><button name='task-info' type='submit' class='btn-info' value='". $info['task_ID'] ."'>". $info['task_Name'] ."</button></form></div>";
                   }
                 }
               ?>
@@ -71,9 +71,9 @@
                   </div>
                 </form>
                 <!-- update form -->
-                <form class="task-option-buttons">
+                <form name="taskOptions" action="task-options.php" class="task-option-buttons" method="POST">
                   <div class="add-btn">
-                    <button class="btn btn-add"></button>
+                    <button name="task-add" type="submit" class="btn btn-add"></button>
                   </div>
                 </form>
               </div>

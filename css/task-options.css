@@ -1,0 +1,95 @@
+.task-options-container
+{
+  display: grid;
+  grid-template-rows: 30px 135px 25px;
+  grid-template-areas:
+    "task-options-header"
+    "task-options-control"
+    "task-options-submit";
+
+  background-color: white;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  border-radius: 2px;
+  padding: 24px;
+}
+
+.task-options-header
+{
+  display: grid;
+  grid-template-columns: 1.5fr 4fr;
+  grid-template-areas:
+    "task-name task-sdesc";
+
+  grid-area: task-options-header;
+}
+
+.task-name
+{
+  grid-area: task-name;
+}
+
+.task-sdesc
+{
+  grid-area: task-sdesc;
+  margin-left: 5px;
+}
+
+.task-options-control
+{
+  display: grid;
+  grid-template-columns: 3fr .4fr;
+  grid-template-areas:
+    "task-ldesc task-ctrl";
+
+  grid-area: task-options-control;
+  margin: 5px 0;
+}
+
+.task-ldesc
+{
+  grid-area: task-ldesc;
+  margin-right: 5px;
+}
+
+.task-ctrl
+{
+  display: grid;
+  grid-template-rows: 38px 38px 38px;
+  grid-gap: 5px;
+  grid-template-areas:
+    "task-rank"
+    "task-rank-num"
+    "task-status";
+
+  grid-area: task-ctrl;
+}
+
+.task-rank
+{
+  grid-area: task-rank;
+}
+
+.task-rank-num
+{
+  grid-area: task-rank-num;
+}
+
+.task-status
+{
+  grid-area: task-status;
+}
+
+.task-options-submit
+{
+  display: grid;
+  grid-template-columns: 3fr .4fr;
+  grid-template-areas:
+    ". task-submit";
+
+  grid-area: task-options-submit;
+}
+
+.task-submit
+{
+  grid-area: task-submit;
+}
