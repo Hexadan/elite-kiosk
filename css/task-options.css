@@ -37,7 +37,7 @@
 .task-options-control
 {
   display: grid;
-  grid-template-columns: 3fr .4fr;
+  grid-template-columns: 3fr .3fr;
   grid-template-areas:
     "task-ldesc task-ctrl";
 
@@ -57,21 +57,21 @@
   grid-template-rows: 38px 38px 38px;
   grid-gap: 5px;
   grid-template-areas:
+    "task-category"
     "task-rank"
-    "task-rank-num"
     "task-status";
 
   grid-area: task-ctrl;
 }
 
+.task-category
+{
+  grid-area: task-category;
+}
+
 .task-rank
 {
   grid-area: task-rank;
-}
-
-.task-rank-num
-{
-  grid-area: task-rank-num;
 }
 
 .task-status
@@ -82,7 +82,7 @@
 .task-options-submit
 {
   display: grid;
-  grid-template-columns: 3fr .4fr;
+  grid-template-columns: 3fr .3fr;
   grid-template-areas:
     ". task-submit";
 

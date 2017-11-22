@@ -42,7 +42,7 @@
     <div class="main-container">
       <div class="main-content">
         <div class="general-task-container">
-          <div class="task-header">
+          <div class="task-header" style="background-color: #AED581;">
             <div class="task-header-type">
               <p>General</p>
             </div>
@@ -89,7 +89,7 @@
         </div>
 
         <div class="priority-task-container">
-          <div class="task-header">
+          <div class="task-header" style="background-color: #E57373;">
             <div class="task-header-type">
               <p>Priority</p>
             </div>
