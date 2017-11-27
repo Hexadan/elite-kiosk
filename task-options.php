@@ -86,28 +86,28 @@ if($result->num_rows)
         <div class="task-options-container">
           <div class="task-options-header">
             <div class="task-name" style="background-color: blue">
-              <input type="text" style="width:100%; height:26px; margin-top:2px; box-sizing:border-box;"<?php echo "value='". $taskname ."'"; if($selection == 0){ echo "disabled";} ?> placeholder="Task Name">
+              <input type="text" class="task-name-input" <?php echo "value='". $taskname ."'"; if($selection == 0){ echo "disabled";} ?> placeholder="Task Name">
             </div>
             <div class="task-sdesc" style="background-color: red">
-              <input type="text" style="width:100%; height:26px; margin-top:2px; box-sizing:border-box;" <?php echo "value='". $tasksdesc ."'"; if($selection == 0){ echo "disabled";} ?> placeholder="Short Description">
+              <input type="text" class="task-sdesc-input" <?php echo "value='". $tasksdesc ."'"; if($selection == 0){ echo "disabled";} ?> placeholder="Short Description">
             </div>
           </div>
           <div class="task-options-control">
             <div class="task-ldesc" style="background-color: green">
-              <textarea style="width:100%; box-sizing: border-box; resize:none; height:100%;"><?php echo $taskldesc; ?></textarea>
+              <textarea class="task-ldesc-input"><?php echo $taskldesc; ?></textarea>
             </div>
             <div class="task-ctrl">
               <div class="task-category" style="background-color: yellow">
-                <select style="height:25px;">
+                <select class="task-category-input">
                   <option>General</option>
                   <option>Priority</option>
                 </select>
               </div>
-              <div class="task-rank-num" style="background-color: gray">
-                <input type="text" style="width:35px;">
+              <div class="task-rank" style="background-color: gray">
+                <input type="text" class="task-rank-input">
               </div>
               <div class="task-status" style="background-color: pink">
-                <select style="height:25px;">
+                <select class="task-status-input">
                   <option>Incomplete</option>
                   <option>Complete</option>
                   <option>All</option>
@@ -117,7 +117,7 @@ if($result->num_rows)
           </div>
           <div class="task-options-submit">
             <div class="task-submit" style="background-color: orange">
-              <button type="submit">Submit</button>
+              <button type="submit" style="height:100%;">Submit</button>
             </div>
           </div>
         </div>

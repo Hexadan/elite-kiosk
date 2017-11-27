@@ -28,10 +28,26 @@
   grid-area: task-name;
 }
 
+.task-name-input
+{
+  height: 26px;
+  width: 100%;
+  margin-top: 2px;
+  box-sizing: border-box;
+}
+
 .task-sdesc
 {
   grid-area: task-sdesc;
   margin-left: 5px;
+}
+
+.task-sdesc-input
+{
+  height: 26px;
+  width: 100%;
+  margin-top: 2px;
+  box-sizing: border-box;
 }
 
 .task-options-control
@@ -51,6 +67,14 @@
   margin-right: 5px;
 }
 
+.task-ldesc-input
+{
+  height: 100%;
+  width: 100%;
+  resize: none;
+  box-sizing: border-box;
+}
+
 .task-ctrl
 {
   display: grid;
@@ -67,16 +91,38 @@
 .task-category
 {
   grid-area: task-category;
+  text-align: right;
+  padding-top: 8px;
+}
+
+.task-category-input
+{
+  height: 25px;
+  width: 89px;
 }
 
 .task-rank
 {
   grid-area: task-rank;
+  text-align: right;
+  padding-top: 8px;
+}
+
+.task-rank-input
+{
+  width: 85px;
 }
 
 .task-status
 {
   grid-area: task-status;
+  text-align: right;
+  padding-top: 8px;
+}
+
+.task-status-input
+{
+  height: 25px;
 }
 
 .task-options-submit
@@ -92,4 +138,5 @@
 .task-submit
 {
   grid-area: task-submit;
+  text-align: right;
 }
