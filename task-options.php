@@ -79,48 +79,88 @@ if($result->num_rows)
       </div>
     </div>
 
-    <?php //echo $taskid ."-". $taskname ."-". $tasksdesc ."-". $taskldesc ."-". $taskcategory ."-". $taskrank ."-". $taskstatus; ?>
-
     <div class="main-container">
       <div class="main-content">
-        <div class="task-options-container">
+        <?php
+          if($selection == 1)
+          {
+            echo  "<form class='task-options-container' action='php/add.php' onsubmit='return validateAddTask()' method='POST'>";
+          }
+          elseif($selection == 2)
+          {
+            echo "<form class='task-options-container' action='php/edit.php' onsubmit='return validateEditTask()' method='POST'>";
+          }
+          elseif($selection == 3)
+          {
+            echo "<form class='task-options-container' action='php/delete.php' method='POST'>";
+          }
+        ?>
           <div class="task-options-header">
-            <div class="task-name" style="background-color: blue">
-              <input type="text" class="task-name-input" <?php echo "value='". $taskname ."'"; if($selection == 0){ echo "disabled";} ?> placeholder="Task Name">
+            <div class="task-name">
+              <input name="taskName" type="text" class="task-name-input" <?php echo "value='". $taskname ."'"; if($selection == 0){ echo "disabled";} ?> placeholder="Task Name">
             </div>
-            <div class="task-sdesc" style="background-color: red">
-              <input type="text" class="task-sdesc-input" <?php echo "value='". $tasksdesc ."'"; if($selection == 0){ echo "disabled";} ?> placeholder="Short Description">
+            <div class="task-sdesc">
+              <input name="taskShortDesc" type="text" class="task-sdesc-input" <?php echo "value='". $tasksdesc ."'"; if($selection == 0){ echo "disabled";} ?> placeholder="Short Description">
             </div>
           </div>
           <div class="task-options-control">
-            <div class="task-ldesc" style="background-color: green">
-              <textarea class="task-ldesc-input"><?php echo $taskldesc; ?></textarea>
+            <div class="task-ldesc">
+              <textarea name="taskLongDesc" class="task-ldesc-input"<?php if($selection == 0){ echo "disabled";} ?>><?php echo $taskldesc; ?></textarea>
             </div>
             <div class="task-ctrl">
-              <div class="task-category" style="background-color: yellow">
-                <select class="task-category-input">
-                  <option>General</option>
-                  <option>Priority</option>
+              <div class="task-category">
+                <select name="taskType" class="task-category-input" <?php if($selection == 0){ echo "disabled";} ?>>
+                  <?php
+                    if($taskcategory == "G")
+                    {
+                      echo "<option value='G' selected>General</option>";
+                      echo "<option value='P'>Priority</option>";
+                    }
+                    elseif($taskcategory == "P")
+                    {
+                      echo "<option value='G'>G</option>";
+                      echo "<option value='P' selected>P</option>";
+                    }
+                    else
+                    {
+                      echo "<option value='G'>General</option>";
+                      echo "<option value='P'>Priority</option>";
+                    }
+                  ?>
                 </select>
               </div>
-              <div class="task-rank" style="background-color: gray">
-                <input type="text" class="task-rank-input">
+              <div class="task-rank">
+                <input name="taskPriority" type="text" class="task-rank-input"<?php echo "value='". $taskrank ."'"; if($selection == 0){ echo "disabled";} ?>>
               </div>
-              <div class="task-status" style="background-color: pink">
-                <select class="task-status-input">
-                  <option>Incomplete</option>
-                  <option>Complete</option>
-                  <option>All</option>
+              <div class="task-status">
+                <select name="taskStatus" class="task-status-input" <?php if($selection == 0){ echo "disabled";} ?>>
+                  <?php
+                    if($taskstatus == 0)
+                    {
+                      echo "<option value='0' selected>Incomplete</option>";
+                      echo "<option value='1'>Complete</option>";
+                    }
+                    elseif($taskstatus == 1)
+                    {
+                      echo "<option value='0'>Incomplete</option>";
+                      echo "<option value='1' selected>Complete</option>";
+                    }
+                    else
+                    {
+                      echo "<option value='0'>Incomplete</option>";
+                      echo "<option value='1'>Complete</option>";
+                    }
+                  ?>
                 </select>
               </div>
             </div>
           </div>
           <div class="task-options-submit">
-            <div class="task-submit" style="background-color: orange">
-              <button type="submit" style="height:100%;">Submit</button>
+            <div class="task-submit">
+              <?php if($selection != 0){echo "<button name='submit' type='submit' value='". $taskid ."' style='height:100%;'>Submit</button>";} ?>
             </div>
           </div>
-        </div>
+        </form>
       </div>
     </div>
 
