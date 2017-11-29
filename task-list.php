@@ -220,7 +220,7 @@ if((isset($_POST['status-selection'])) && (isset($_POST['submit'])))
               }
             }
 
-            include('/var/www/html/new/php/database-connection.php');
+            include('/var/www/html/php/database-connection.php');
 
             $result = $db_conn->query($query);
 

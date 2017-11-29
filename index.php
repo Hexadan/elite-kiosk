@@ -45,7 +45,7 @@
             </div>
             <div class="module-task-recent">
               <?php
-                include('/var/www/html/new/php/database-connection.php');
+                include('/var/www/html/php/database-connection.php');
 
                 $query = "SELECT * FROM task_list ORDER BY task_ID DESC LIMIT 5";
 

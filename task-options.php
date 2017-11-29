@@ -27,7 +27,7 @@ else
 
 $query = "SELECT * FROM task_list WHERE task_ID = '$task'";
 
-include('/var/www/html/new/php/database-connection.php');
+include('/var/www/html/php/database-connection.php');
 
 $result = $db_conn->query($query);
 

@@ -41,53 +41,6 @@
 
     <div class="main-container">
       <div class="main-content">
-        <div class="general-task-container">
-          <div class="task-header" style="background-color: #AED581;">
-            <div class="task-header-type">
-              <p>General</p>
-            </div>
-          </div>
-          <div class="column-header">
-            <div class="column-general">
-              <div class="col-task-name">
-                Task Name
-              </div>
-              <div class="col-task-sdesc">
-                Short Description
-              </div>
-              <div class="col-task-options"></div>
-            </div>
-          </div>
-          <div class="row-content">
-            <?php
-
-            $query = "SELECT * FROM task_list WHERE task_List = 'G' AND task_Status = '0' ORDER BY task_ID DESC LIMIT 5";
-
-            include('/var/www/html/new/php/database-connection.php');
-
-            $result = $db_conn->query($query);
-
-            if($result->num_rows)
-            {
-              while($info = $result->fetch_assoc())
-              {
-                echo "<div class='row'>";
-                echo "<div class='general-row'>";
-                echo "<div class='row-task-name'>". $info['task_Name'] ."</div>";
-                echo "<div class='row-task-sdesc'>". $info['task_ShortDesc'] ."</div>";
-                echo "<div class='row-task-options'>";
-                echo "</div>";
-                echo "</div>";
-                echo "</div>";
-              }
-            }
-
-            ?>
-          </div>
-          <div class="task-footer">
-          </div>
-        </div>
-
         <div class="priority-task-container">
           <div class="task-header" style="background-color: #E57373;">
             <div class="task-header-type">
@@ -113,7 +66,7 @@
 
             $query = "SELECT * FROM task_list WHERE task_List = 'P' AND task_Status = '0' ORDER BY task_Priority DESC LIMIT 5";
 
-            include('/var/www/html/new/php/database-connection.php');
+            include('/var/www/html/php/database-connection.php');
 
             $result = $db_conn->query($query);
 
@@ -126,6 +79,53 @@
                 echo "<div class='row-task-name'>". $info['task_Name'] ."</div>";
                 echo "<div class='row-task-sdesc'>". $info['task_ShortDesc'] ."</div>";
                 echo "<div class='row-task-rank'>". $info['task_Priority'] ."</div>";
+                echo "<div class='row-task-options'>";
+                echo "</div>";
+                echo "</div>";
+                echo "</div>";
+              }
+            }
+
+            ?>
+          </div>
+          <div class="task-footer">
+          </div>
+        </div>
+
+        <div class="general-task-container">
+          <div class="task-header" style="background-color: #AED581;">
+            <div class="task-header-type">
+              <p>General</p>
+            </div>
+          </div>
+          <div class="column-header">
+            <div class="column-general">
+              <div class="col-task-name">
+                Task Name
+              </div>
+              <div class="col-task-sdesc">
+                Short Description
+              </div>
+              <div class="col-task-options"></div>
+            </div>
+          </div>
+          <div class="row-content">
+            <?php
+
+            $query = "SELECT * FROM task_list WHERE task_List = 'G' AND task_Status = '0' ORDER BY task_ID DESC LIMIT 5";
+
+            include('/var/www/html/php/database-connection.php');
+
+            $result = $db_conn->query($query);
+
+            if($result->num_rows)
+            {
+              while($info = $result->fetch_assoc())
+              {
+                echo "<div class='row'>";
+                echo "<div class='general-row'>";
+                echo "<div class='row-task-name'>". $info['task_Name'] ."</div>";
+                echo "<div class='row-task-sdesc'>". $info['task_ShortDesc'] ."</div>";
                 echo "<div class='row-task-options'>";
                 echo "</div>";
                 echo "</div>";
