@@ -82,7 +82,11 @@ if($result->num_rows)
     <div class="main-container">
       <div class="main-content">
         <?php
-          if($selection == 1)
+          if($selection == 0)
+          {
+            echo "<div class='task-options-container'>";
+          }
+          elseif($selection == 1)
           {
             echo  "<form class='task-options-container' action='php/add.php' onsubmit='return validateAddTask()' method='POST'>";
           }
