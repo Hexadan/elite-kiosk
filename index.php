@@ -47,7 +47,7 @@
               <?php
                 include('/var/www/html/php/database-connection.php');
 
-                $query = "SELECT * FROM task_list ORDER BY task_ID DESC LIMIT 5";
+                $query = "SELECT * FROM task_list WHERE task_Status = '0' ORDER BY task_ID DESC LIMIT 5";
 
                 $result = $db_conn->query($query);
 
