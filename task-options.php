@@ -88,11 +88,11 @@ if($result->num_rows)
           }
           elseif($selection == 1)
           {
-            echo  "<form class='task-options-container' action='php/add.php' onsubmit='return validateAddTask()' method='POST'>";
+            echo  "<form name='create-task' class='task-options-container' onsubmit='return validateCreateTask();'>";
           }
           elseif($selection == 2)
           {
-            echo "<form class='task-options-container' action='php/edit.php' onsubmit='return validateEditTask()' method='POST'>";
+            echo "<form name='edit-task' class='task-options-container' action='php/edit.php' onsubmit='return validateEditTask()' method='POST'>";
           }
           elseif($selection == 3)
           {
