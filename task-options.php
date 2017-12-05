@@ -134,7 +134,7 @@ if($result->num_rows)
                 </select>
               </div>
               <div class="task-rank">
-                <input name="taskPriority" type="text" class="task-rank-input"<?php echo "value='". $taskrank ."'"; if($selection == 0){ echo "disabled";} ?>>
+                <input name="taskPriority" type="text" class="task-rank-input" value="0" <?php echo "value='". $taskrank ."'"; if($selection == 0){ echo "disabled";} ?>>
               </div>
               <div class="task-status">
                 <select name="taskStatus" class="task-status-input" <?php if($selection == 0){ echo "disabled";} ?>>

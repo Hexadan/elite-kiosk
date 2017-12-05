@@ -81,7 +81,9 @@ if((isset($_POST['status-selection'])) && (isset($_POST['submit'])))
               ?>
             </div>
             <div class="task-header-controls">
-              <a href="#"><p>ADD</p></a>
+              <form name="taskOptions" action="task-options.php" class="task-option-buttons" method="POST">
+                <button name="task-add" type="submit" class="btn"><p>ADD</p></button>
+              </form>
             </div>
             <div class="task-header-sort">
               <form action="task-list.php" method="POST" class="task-sort-container">
