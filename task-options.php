@@ -88,7 +88,7 @@ if($result->num_rows)
           }
           elseif($selection == 1)
           {
-            echo  "<form name='create-task' class='task-options-container' onsubmit='return validateCreateTask();'>";
+            echo  "<form name='create-task' class='task-options-container' action='php/add.php' onsubmit='return validateCreateTask();' method='POST'>";
           }
           elseif($selection == 2)
           {
@@ -161,7 +161,7 @@ if($result->num_rows)
           </div>
           <div class="task-options-submit">
             <div class="task-submit">
-              <?php if($selection != 0){echo "<button name='submit' type='submit' value='". $taskid ."' style='height:100%;'>Submit</button>";} ?>
+              <?php if(($selection != 0) && (selection != 1)){echo "<button name='submit' type='submit' value='". $taskid ."' style='height:100%;'>Submit</button>";}elseif($selection == 1){echo "<button name='submit' type='submit' style='height:100%;'>Submit</button>";} ?>
             </div>
           </div>
         </form>
